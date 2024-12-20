@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -9,7 +10,7 @@
     <name>MinecraftCurrencyPlugin</name>
     <description>A Minecraft plugin for currency and villager shops.</description>
 
-    <!-- Set Java 21 Compatibility -->
+    <!-- Java Version -->
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
@@ -18,7 +19,7 @@
 
     <!-- Dependencies -->
     <dependencies>
-        <!-- Spigot API -->
+        <!-- Spigot API Dependency -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
@@ -27,10 +28,21 @@
         </dependency>
     </dependencies>
 
-    <!-- Build Plugins -->
+    <!-- Build Configuration -->
     <build>
+        <resources>
+            <!-- Ensure resource files like plugin.yml are included -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>plugin.yml</include>
+                    <include>config.yml</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
-            <!-- Maven Compiler Plugin for Java 21 -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -41,7 +53,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Maven Shade Plugin for JAR packaging -->
+            <!-- Maven Shade Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -53,6 +65,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <minimizeJar>false</minimizeJar> <!-- Do not minimize the JAR -->
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>com.example.myplugin.MinecraftCurrencyPlugin</mainClass>
