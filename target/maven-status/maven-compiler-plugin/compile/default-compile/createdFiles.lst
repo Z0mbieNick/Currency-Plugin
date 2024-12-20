@@ -1,0 +1,10 @@
+com\example\myplugin\commands\CreateShopCommand.class
+com\example\myplugin\commands\BalanceCommand.class
+com\example\myplugin\commands\PayCommand.class
+com\example\myplugin\commands\RemoveShopCommand.class
+com\example\myplugin\listeners\VillagerListener.class
+com\example\myplugin\commands\SetStartingCapitalCommand.class
+com\example\myplugin\MinecraftCurrencyPlugin.class
+com\example\myplugin\Shop.class
+com\example\myplugin\listeners\PlayerListener.class
+com\example\myplugin\utils\CurrencyUtils.class
