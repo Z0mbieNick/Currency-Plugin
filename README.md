@@ -1,3 +1,9 @@
+The Code is found in the master branch
+
+the right version to download is: minecraft-currency-plugin-1.0.0.jar
+it is found in the target folder
+
+
 Minecraft Currency Plugin
 A Minecraft plugin designed for managing an in-game currency system and creating villager-based shops. Players can trade items for money, transfer money to each other, and create shops with limited stock, making trading more realistic.
 
